@@ -68,8 +68,7 @@ public class PatientServiceImpl implements PatientService{
         }
 
         patientRepository.delete(patient);
-        return ResponseEntity.badRequest()
-                .body(new ResponseData(new MetaData(HttpStatus.OK), "Patient deleted"));
+        return ResponseEntity.ok(new ResponseData(new MetaData(HttpStatus.OK), "Patient deleted"));
     }
 
     @Override
